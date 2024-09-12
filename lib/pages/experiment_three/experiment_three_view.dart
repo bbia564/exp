@@ -7,7 +7,7 @@ import 'experiment_three_logic.dart';
 
 class ExperimentThreePage extends GetView<ExperimentThreeLogic> {
   Widget _item(int index, BuildContext context) {
-    final contents = ['Custom Type','Delete records', 'About APP'];
+    final contents = ['Custom Type','Delete records', 'Version'];
     return GestureDetector(
       child: Container(
         width: double.infinity,
@@ -22,12 +22,9 @@ class ExperimentThreePage extends GetView<ExperimentThreeLogic> {
             ),
           ),
           Visibility(
-              visible: index == 0,
-              child: const Icon(
-                Icons.keyboard_arrow_right,
-                size: 20,
-                color: Colors.grey,
-              ))
+              visible: index == 2,
+              child: Text('1.0.0')
+          )
         ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
       ),
       onTap: () {
@@ -37,9 +34,6 @@ class ExperimentThreePage extends GetView<ExperimentThreeLogic> {
             break;
           case 1:
             controller.cleanExperimentData();
-            break;
-          case 2:
-            controller.aboutExperimentApp(context);
             break;
         }
       },
