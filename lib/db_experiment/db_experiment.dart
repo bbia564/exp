@@ -45,7 +45,7 @@ class DBExperiment extends GetxService {
   }
 
   _initData(Database db) async {
-    List<String> typeNames = ['Qualitative experiment',' Quantitative experiment', 'Structural Analysis experiment'];
+    List<String> typeNames = ['Other experiment','Quantitative experiment', 'Structural Analysis experiment'];
     List<ExperimentTypeEntity> types = [];
     for (int i = 0; i < typeNames.length; i++) {
       final id = await db.insert('experiment_type', {
